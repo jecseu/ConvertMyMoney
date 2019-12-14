@@ -15,8 +15,6 @@ app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(BodyParser.urlencoded({extended: false}))
 
-
-
 app.get('/', async (req, res) => {
     const cotacao = await apiBCB.getCotacao()
     res.render('home', {
